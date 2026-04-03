@@ -1,3 +1,4 @@
+package Controleur;
 /**
  * Gestion des murs
  *

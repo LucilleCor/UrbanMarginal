@@ -1,3 +1,4 @@
+package Controleur;
 /**
  * Gestion du jeu côté client
  *

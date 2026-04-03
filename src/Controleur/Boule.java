@@ -1,3 +1,5 @@
+package Controleur;
+
 /**
  * Gestion de la boule
  *
