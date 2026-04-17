@@ -1,4 +1,4 @@
-package outils.connexion;
+package Outils.connexion;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

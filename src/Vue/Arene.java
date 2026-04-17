@@ -14,7 +14,9 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JTextArea;
 
-public class Arene extends JFrame {
+import Controleur.Global;
+
+public class Arene extends JFrame implements Global{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -37,6 +39,19 @@ public class Arene extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblFond = new JLabel("");
+		lblFond.setBounds(0, 0, 800, 600);
+		contentPane.add(lblFond);
+		String chemin = FONDARENE;
+		URL resource = getClass().getClassLoader().getResource(chemin);
+		lblFond.setIcon(new ImageIcon(resource));
+		contentPane.add(lblFond);
+		
+		txtSaisie = new JTextField();
+		txtSaisie.setBounds(0, 600, 800, 25);
+		contentPane.add(txtSaisie);
+		txtSaisie.setColumns(10);
+		
 		JScrollPane jspChat = new JScrollPane();
 		jspChat.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		jspChat.setBounds(0, 625, 800, 140);
@@ -44,17 +59,5 @@ public class Arene extends JFrame {
 		
 		JTextArea txtChat = new JTextArea();
 		jspChat.setViewportView(txtChat);
-		
-		txtSaisie = new JTextField();
-		txtSaisie.setBounds(0, 600, 800, 25);
-		contentPane.add(txtSaisie);
-		txtSaisie.setColumns(10);
-		
-		JLabel lblFond = new JLabel("");
-		lblFond.setBounds(0, 0, 800, 600);
-		contentPane.add(lblFond);
-		String chemin = "fonds/fondarene.jpg";
-		URL resource = getClass().getClassLoader().getResource(chemin);
-		lblFond.setIcon(new ImageIcon(resource));
 	}
 }

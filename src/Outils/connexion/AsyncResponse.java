@@ -1,4 +1,4 @@
-package outils.connexion;
+package Outils.connexion;
 
 /**
  * Permet la récupération asynchrone d'une réponse

@@ -1,4 +1,4 @@
-package Controleur;
+package Modèle;
 
 /**
  * Gestion de la boule
