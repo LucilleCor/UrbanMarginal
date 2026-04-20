@@ -105,7 +105,44 @@ public interface Global {
 	 * ordre pour ajouter le panel des murs dans l'arène du client
 	 */
 	String AJOUTPANELMURS = "ajout panel murs";
-	
+	/**
+	 * hauteur du message
+	 */
+	int HAUTEURMESSAGE = 8;
+	/**
+	 * marge du message
+	 */
+	int MARGEMESSAGE = 8;
+	/**
+	 * Chemin du dossier de l'image du mur
+	 */
 	String CHEMINMURS = "murs"+CHEMINSEPARATOR;
+	/**
+	 * Chemin de l'image du mur
+	 */
 	String MUR = CHEMINMURS+"mur.gif";
+	/**
+	 * hauteur du personnage
+	 */
+	int HAUTEURPERSO = 44;
+	/**
+	 * largeur du personnage
+	 */
+	int LARGEURPERSO = 39;
+	/**
+	 * ordre pour ajouter un jLabel dans l'arène du serveur (joueur, message, boule)
+	 */
+	String AJOUTJLABELJEU = "ajout jLabel jeu";
+	/**
+	 * ordre pour modifier le panel du jeu dans l'aeène du client
+	 */
+	String MODIFPANELJEU = "modif panel jeu";
+	/**
+	 * orientation du personnage vers la gauche
+	 */
+	int GAUCHE = 0;
+	/**
+	 * orientation du personnage vers la droite
+	 */
+	int DROITE = 1;
 }

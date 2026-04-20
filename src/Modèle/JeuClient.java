@@ -13,6 +13,7 @@ import Outils.connexion.Connection;
 public class JeuClient extends Jeu implements Global{
 	
 	private Connection connectionServeur;
+	private boolean mursOk = false;
 	
 	/**
 	 * Controleur
@@ -39,7 +40,14 @@ public class JeuClient extends Jeu implements Global{
 	@Override
 	public void reception(Connection connection, Object info) {
 		if (info instanceof JPanel) {
-			this.controle.evenementJeuClient(AJOUTPANELMURS, info);
+			if(!this.mursOk) {
+				// arrivée du panel des murs
+				this.controle.evenementJeuClient(AJOUTPANELMURS, info);
+				this.mursOk = true;
+			} else {
+				// arrivée du panel de jeu
+				this.controle.evenementJeuClient(MODIFPANELJEU, info);
+			}
 		}
 	}
 	

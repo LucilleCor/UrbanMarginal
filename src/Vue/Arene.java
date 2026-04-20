@@ -14,11 +14,15 @@ import javax.swing.ScrollPaneConstants;
 
 import Controleur.Global;
 
+/**
+ * Frame qui affiche et gère l'arène du jeu
+ */
 public class Arene extends JFrame implements Global{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JPanel jpnMurs;
+	private JPanel jpnJeu;
 	private JTextField txtSaisie;
 	
 	/**
@@ -39,12 +43,39 @@ public class Arene extends JFrame implements Global{
 	}
 	
 	/**
+	 * Getter panel du jeu
+	 * @return jpnJeu
+	 */
+	public JPanel getJpnJeu() {
+		return jpnJeu;
+	}
+
+	/**
+	 * Setter panel du jeu
+	 * @param jpnJeu
+	 */
+	public void setJpnJeu(JPanel jpnJeu) {
+		this.jpnJeu.removeAll();
+		this.jpnJeu.add(jpnJeu);
+		this.jpnJeu.repaint();
+	}
+	
+	/**
 	 * Affichage d'un mur
 	 * @param mur
 	 */
 	public void ajoutMurs(Object mur) {
 		jpnMurs.add((JLabel)mur);
 		jpnMurs.repaint();
+	}
+	
+	/**
+	 * Ajout d'un joueur, son message ou sa boule, dans le panel de jeu
+	 * @param info le label à ajouter
+	 */
+	public void ajoutJLabelJeu(JLabel unJLabel) {
+		this.jpnJeu.add(unJLabel);
+		this.jpnJeu.repaint();
 	}
 
 	/**
@@ -59,6 +90,12 @@ public class Arene extends JFrame implements Global{
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		jpnJeu = new JPanel();
+		jpnJeu.setBounds(0, 0, LARGEURARENE, HAUTEURARENE);
+		jpnJeu.setOpaque(false);
+		jpnJeu.setLayout(null);
+		contentPane.add(jpnJeu);
 		
 		jpnMurs = new JPanel();
 		jpnMurs.setBounds(0, 0, LARGEURARENE, HAUTEURARENE);
